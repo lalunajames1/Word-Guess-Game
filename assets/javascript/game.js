@@ -17,6 +17,7 @@ function resetGame() {
     document.getElementById("loss").innerHTML = negPoints;
     document.getElementById("guess").innerHTML = userGuesses;
     document.getElementById("remaining").innerHTML = guessesRemaining;
+    document.getElementById("winning-message").innerHTML = " ";
     startGame()
 }
 
@@ -39,8 +40,7 @@ document.onkeyup = function(event) {
             points++; 
             startGame();
             endGame();
-              
-        } 
+        }
         else if (user !== computerGuess) {
             negPoints++;
             endGame();
@@ -51,11 +51,10 @@ document.onkeyup = function(event) {
 function endGame() {
     if (points === 2)  {
         document.getElementById("winning-message").innerHTML = "You Won";
-        resetGame()
+      
 
     } else if (guessesRemaining  < 1) {
         document.getElementById("winning-message").innerHTML = "You Lose";
-        resetGame()
        
         }
     }
