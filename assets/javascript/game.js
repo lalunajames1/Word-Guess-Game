@@ -4,7 +4,7 @@ var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", 
 var points = 0;
 var negPoints = 0;
 var userGuesses = 0;
-var guessesRemaining = 50;
+var guessesRemaining = 20;
 var user;
 var computerGuess;
 
@@ -12,7 +12,7 @@ function resetGame() {
     points = 0;
     negPoints = 0;
     userGuesses = 0;
-    guessesRemaining = 50;
+    guessesRemaining = 20;
     document.getElementById("win").innerHTML = points;
     document.getElementById("loss").innerHTML = negPoints;
     document.getElementById("guess").innerHTML = userGuesses;
@@ -50,11 +50,11 @@ document.onkeyup = function(event) {
  
 function endGame() {
     if (points === 2)  {
-        document.getElementById("winning-message").innerHTML = "You Won";
+        document.getElementById("winning-message").innerHTML = "You Won!!!";
       
 
     } else if (guessesRemaining  < 1) {
-        document.getElementById("winning-message").innerHTML = "You Lose";
+        document.getElementById("winning-message").innerHTML = "You Lose...";
        
         }
     }
