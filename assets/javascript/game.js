@@ -1,20 +1,20 @@
 
 
 var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var wins = 0;
-var losses = 0;
+var points = 0;
+var negPoints = 0;
 var userGuesses = 0;
 var guessesRemaining = 50;
 var user;
 var computerGuess;
 
 function resetGame() {
-    wins = 0;
-    losses = 0;
+    points = 0;
+    negPoints = 0;
     userGuesses = 0;
     guessesRemaining = 50;
-    document.getElementById("win").innerHTML = wins;
-    document.getElementById("loss").innerHTML = losses;
+    document.getElementById("win").innerHTML = points;
+    document.getElementById("loss").innerHTML = negPoints;
     document.getElementById("guess").innerHTML = userGuesses;
     document.getElementById("remaining").innerHTML = guessesRemaining;
     startGame()
@@ -36,20 +36,20 @@ document.onkeyup = function(event) {
             userGuesses++;
         }  
         if (user === computerGuess) {
-            wins++; 
+            points++; 
             startGame();
             endGame();
               
         } 
         else if (user !== computerGuess) {
-            losses++;
+            negPoints++;
             endGame();
            
         }
     }
  
 function endGame() {
-    if (wins === 2)  {
+    if (points === 2)  {
         document.getElementById("winning-message").innerHTML = "You Won";
         resetGame()
 
@@ -58,11 +58,10 @@ function endGame() {
         resetGame()
        
         }
-   
     }
 
-document.getElementById("win").innerHTML = wins;
-document.getElementById("loss").innerHTML = losses;
+document.getElementById("win").innerHTML = points;
+document.getElementById("loss").innerHTML = negPoints;
 document.getElementById("guess").innerHTML = userGuesses;
 document.getElementById("remaining").innerHTML = guessesRemaining;
 
