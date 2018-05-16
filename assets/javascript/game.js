@@ -29,7 +29,7 @@ function startGame(){
 startGame();
 
 document.onkeyup = function(event) {
-    if (guessesRemaining >= 1){
+    if (guessesRemaining >= 1 && points < 2){
     user = event.key.toLowerCase();
     guessesRemaining--;
     
